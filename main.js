@@ -7,16 +7,16 @@ function setCountdown() {
 
     const x = setInterval( function() {
         var now = new Date().getTime();
-        var distance = countDownDate - now;
+        var reverseTIme = countDownDate - now;
 
-        if (distance < 0) {
+        if (reverseTIme < 0) {
             clearInterval(x);
             document.getElementById("countdown").innerHTML = "Countdown End";
             
     }
 
-         min = Math.round((distance % (1000 * 60 * 60)) / (1000 * 60));
-         sec = Math.round((distance % (1000 * 60)) / 1000);
+         min = Math.round((reverseTIme % (1000 * 60 * 60)) / (1000 * 60));
+         sec = Math.round((reverseTIme % (1000 * 60)) / 1000);
 
         document.getElementById("countdown").innerHTML = min + " m " + sec + " s";
     }, 1000);
